@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Light switched on and off</title>
+</head>
+
+<style>
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		min-height: 100vh;
+		color: white;
+		/*background: radial-gradient(white);*/
+		/*background-image: radial-gradient(circle at 45% 50%,yellow 10%,orange 40%,black);*/
+		background-image:radial-gradient(white);
+		background-color: lightgray;
+		/*background-image:radial-gradient(white 5%,yellow 40%,black);*/
+		/*transform-origin: center;*/
+		transition: all  2s ease;
+	}
+
+	.image-container{
+		width: 400px;
+		height: 400px;
+		/*border: 10px double white;*/
+		
+	}
+	.image-container>img{
+		width: 100%;
+		height: auto;
+		transform:scale(1.0);
+		transition: all 1.5s ease;
+	}
+	button{
+		padding: 10px;
+		width: 100px;
+		background-color: black;
+		color: white;
+		border-radius: 5px;
+		transition: all 1.5s ease;
+	}
+</style>
+<body>
+	<div class="container" id="container">
+		<div class="image-container">
+			<img id="image1" src="./off.png">
+		</div>
+		<button id="btn_OnOff" onclick="changeImage()">on</button>
+	</div>
+
+	<script>
+
+		let image=document.getElementById("image1");
+		let btn_onoff=document.getElementById("btn_OnOff");
+		let container = document.getElementById("container");
+
+		let on=true;
+
+		function changeImage(){
+
+			on=!on;
+			if(on==true){
+				
+				image.src="./off.png";
+				// image.style="transform:scale(1.0)";
+				// image.style="border: 10px double red";
+				
+				btn_onoff.innerText="ON";
+				btn_onoff.style="background-color:black;color:white"
+				
+				container.style="background-color:lightgrey;"
+				container.style="background-image:radial-gradient(white);"
+
+			}
+			else{
+				image.src="./on.png"
+				// image.style="transform:scale(1.1)";
+				// image.style="border: 10px double blue";
+				
+				btn_onoff.innerText="OFF";
+				btn_onoff.style="background-color:white;color:black"
+				
+				// container.style="background-color:radial-gradient(orange,black);"
+				container.style="background-color:orange;"
+				// container.style="background-image:radial-gradient(circle at 45% 50%,orange 10%,yellow 30%,black);"
+				container.style="background:radial-gradient(circle at 45% 50%,yellow 10%,orange 40%,black);";
+				
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Light switched on and off</title>
+</head>
+
+<style>
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		min-height: 100vh;
+		color: white;
+		background-image:radial-gradient(white);
+		background-color: lightgray;
+		transition: all  2s ease;
+	}
+
+	.image-container{
+		width: 400px;
+		height: 400px;	
+		
+	}
+	.image-container>img{
+		width: 100%;
+		height: auto;
+		transform:scale(1.0);
+		transition: all 1.5s ease;
+	}
+	button{
+		padding: 10px;
+		width: 100px;
+		background-color: black;
+		color: white;
+		border-radius: 5px;
+		transition: all 1.5s ease;
+	}
+</style>
+<body>
+	<div class="container" id="container">
+		<div class="image-container">
+			<img id="image1" src="./off.png">
+		</div>
+		<button id="btn_OnOff" onclick="changeImage()">on</button>
+	</div>
+
+	<script>
+
+		let image=document.getElementById("image1");
+		let btn_onoff=document.getElementById("btn_OnOff");
+		let container = document.getElementById("container");
+
+		let on=true;
+
+		function changeImage(){
+
+			on=!on;
+			if(on==true){
+				
+				image.src="./off.png";
+								
+				btn_onoff.innerText="ON";
+				btn_onoff.style="background-color:black;color:white"
+				
+				container.style="background-color:lightgrey;"
+				container.style="background-image:radial-gradient(white);"
+
+			}
+			else{
+				image.src="./on.png"
+								
+				btn_onoff.innerText="OFF";
+				btn_onoff.style="background-color:white;color:black"
+				
+				
+				container.style="background-color:orange;"				
+				container.style="background:radial-gradient(circle at 45% 50%,yellow 10%,orange 40%,black);";
+				
+			}
+		}
+	</script>
+</body>
+</html> -->
